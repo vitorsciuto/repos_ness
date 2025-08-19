@@ -333,7 +333,8 @@ with tab3:
     # Destacar a linha de total
     def highlight_total(row):
         if row['Matéria'] == 'TOTAL':
-            return ['background-color: #e6f3ff; font-weight: bold'] * len(row)
+            # Alto contraste para tema escuro/claro
+            return ['background-color: #d9ebff; color: #000000; font-weight: 700'] * len(row)
         return [''] * len(row)
     
     st.dataframe(
@@ -350,17 +351,17 @@ with tab3:
     
     with col1:
         materia_mais_ativa = df_materias.loc[df_materias['total'].idxmax(), 'Matéria']
-        st.metric("🏆 Matéria Mais Ativa", materia_mais_ativa, df_materias['total'].max())
+        st.metric("🏆 Matéria Mais Ativa", materia_mais_ativa, int(df_materias['total'].max()))
     
     with col2:
         semana_mais_ativa = ['Semana 1', 'Semana 2', 'Semana 3'][
             [total_semana1, total_semana2, total_semana3].index(max([total_semana1, total_semana2, total_semana3]))
         ]
-        st.metric("📅 Semana Mais Ativa", semana_mais_ativa, max([total_semana1, total_semana2, total_semana3]))
+        st.metric("📅 Semana Mais Ativa", semana_mais_ativa, int(max([total_semana1, total_semana2, total_semana3])))
     
     with col3:
-        media_por_materia = round(total_geral / len(materias), 1)
-        st.metric("📈 Média por Matéria", f"{media_por_materia}")
+        media_por_materia = round(total_geral / max(len(materias), 1), 1)
+        st.metric("📈 Média por Matéria", media_por_materia)
 
 with tab4:
     st.subheader("📜 Histórico de Interações")
@@ -376,7 +377,9 @@ with tab4:
         with col1:
             filtro_materia = st.selectbox("Filtrar por Matéria:", ["Todas"] + materias, key="filtro_hist")
         with col2:
-            filtro_semana = st.selectbox("Filtrar por Semana:", ["Todas", "semana1", "semana2", "semana3"], key="filtro_sem_hist")
+            filtro_semana_label_to_key = {"Todas": "Todas", "Semana 1": "semana1", "Semana 2": "semana2", "Semana 3": "semana3"}
+            filtro_semana_label = st.selectbox("Filtrar por Semana:", list(filtro_semana_label_to_key.keys()), key="filtro_sem_hist")
+            filtro_semana = filtro_semana_label_to_key[filtro_semana_label]
         
         # Aplicar filtros
         df_filtrado = df_historico.copy()
