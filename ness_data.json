@@ -1,0 +1,163 @@
+{
+  "materias": {
+    "Análise de Dados": {
+      "semana1": 34,
+      "semana2": 0,
+      "semana3": 0,
+      "total": 34
+    },
+    "Fenômenos de Transporte": {
+      "semana1": 28,
+      "semana2": 0,
+      "semana3": 0,
+      "total": 28
+    },
+    "Circuitos Digitais": {
+      "semana1": 0,
+      "semana2": 0,
+      "semana3": 0,
+      "total": 0
+    },
+    "Desenvolvimento de Software": {
+      "semana1": 0,
+      "semana2": 0,
+      "semana3": 0,
+      "total": 0
+    }
+  },
+  "historico": [
+    {
+      "timestamp": "2025-08-18T17:59:05.492839",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:05.719003",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:05.936078",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:06.192137",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:06.444286",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:06.677486",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:07.003160",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:07.246396",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:07.450493",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:08.420041",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 10
+    },
+    {
+      "timestamp": "2025-08-18T17:59:10.029156",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 10
+    },
+    {
+      "timestamp": "2025-08-18T17:59:11.671445",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:12.278937",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:12.803887",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:13.483564",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:14.312107",
+      "materia": "Análise de Dados",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:23.884953",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 10
+    },
+    {
+      "timestamp": "2025-08-18T17:59:24.691993",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 10
+    },
+    {
+      "timestamp": "2025-08-18T17:59:25.709132",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 5
+    },
+    {
+      "timestamp": "2025-08-18T17:59:26.600160",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:27.075927",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 1
+    },
+    {
+      "timestamp": "2025-08-18T17:59:27.935628",
+      "materia": "Fenômenos de Transporte",
+      "semana": "semana1",
+      "incremento": 1
+    }
+  ],
+  "ultima_atualizacao": "2025-08-18T17:59:27.935628"
+}
