@@ -101,7 +101,9 @@ with st.sidebar:
     materia_selecionada = st.selectbox("Selecione a Matéria:", materias)
     
     # Seleção de semana
-    semana_selecionada = st.selectbox("Selecione a Semana:", ["semana1", "semana2", "semana3"])
+    semana_label_to_key = {"Semana 1": "semana1", "Semana 2": "semana2", "Semana 3": "semana3"}
+    semana_label = st.selectbox("Selecione a Semana:", list(semana_label_to_key.keys()))
+    semana_selecionada = semana_label_to_key[semana_label]
     semana_display = {"semana1": "Semana 1", "semana2": "Semana 2", "semana3": "Semana 3"}
     
     st.markdown("---")
@@ -137,18 +139,6 @@ with st.sidebar:
         st.session_state.data["materias"][materia_selecionada]["total"] += 10
         st.session_state.data["historico"].append(
             add_to_history(materia_selecionada, semana_selecionada, 10)
-        )
-        save_data(st.session_state.data)
-        st.rerun()
-    
-    # Incremento personalizado
-    st.markdown("---")
-    incremento_custom = st.number_input("Incremento Personalizado:", min_value=1, max_value=100, value=1)
-    if st.button(f"➕ +{incremento_custom}", key="custom"):
-        st.session_state.data["materias"][materia_selecionada][semana_selecionada] += incremento_custom
-        st.session_state.data["materias"][materia_selecionada]["total"] += incremento_custom
-        st.session_state.data["historico"].append(
-            add_to_history(materia_selecionada, semana_selecionada, incremento_custom)
         )
         save_data(st.session_state.data)
         st.rerun()
@@ -198,20 +188,6 @@ with st.sidebar:
             st.rerun()
 
     st.markdown("---")
-    decremento_custom = st.number_input("Remoção Personalizada:", min_value=1, max_value=100, value=1, key="dec_custom_value")
-    if st.button(f"➖ -{decremento_custom}", key="custom_remove"):
-        current = st.session_state.data["materias"][materia_selecionada][semana_selecionada]
-        delta = min(int(decremento_custom), current)
-        if delta > 0:
-            st.session_state.data["materias"][materia_selecionada][semana_selecionada] -= delta
-            st.session_state.data["materias"][materia_selecionada]["total"] -= delta
-            st.session_state.data["historico"].append(
-                add_to_history(materia_selecionada, semana_selecionada, -delta)
-            )
-            save_data(st.session_state.data)
-            st.rerun()
-
-    st.markdown("---")
     if st.button("↩ Desfazer última interação", type="secondary", key="undo_last"):
         historico = st.session_state.data.get("historico", [])
         if historico:
@@ -236,17 +212,7 @@ with st.sidebar:
         else:
             st.info("Não há interação para desfazer.")
 
-    st.markdown("---")
-
-    # Botão de reset
-    if st.button("🔄 Reset Todos os Dados", type="secondary"):
-        st.session_state.data = {
-            "materias": {materia: {"semana1": 0, "semana2": 0, "semana3": 0, "total": 0} for materia in materias},
-            "historico": [],
-            "ultima_atualizacao": datetime.now().isoformat()
-        }
-        save_data(st.session_state.data)
-        st.rerun()
+    
 
 # Layout principal
 tab1, tab2, tab3, tab4 = st.tabs(["📊 Visão Geral", "📈 Gráficos", "📋 Tabela Detalhada", "📜 Histórico"])
